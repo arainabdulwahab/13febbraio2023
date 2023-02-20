@@ -12,11 +12,17 @@ public class  fibonacci
         int counter = 0;
         int firstNum = 0;
         int secondNum = 1;
-        System.out.println(secondNum);
+        //System.out.println(secondNum);
         while(counter < num)
         {   
             int advanceNum = firstNum + secondNum;
-            System.out.println(advanceNum);
+            if(advanceNum % 2 == 0 )
+            { 
+                System.out.println(advanceNum + " pari");
+            } else 
+            {
+                System.out.println(advanceNum + "dispari");
+            }   
             firstNum = secondNum;
             secondNum = advanceNum;
 
