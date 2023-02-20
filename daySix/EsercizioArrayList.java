@@ -48,12 +48,13 @@ public class EsercizioArrayList
                     
                     switch(secondInput)
                     {
-                        case 'i':
+                        case 'n':
                             System.out.println(Arrays.toString(nums));
                         break;
                         case 's':
                             System.out.println(Arrays.toString(names));
                         break;
+                        
                         default:
                             System.out.println(err);
                     }
@@ -63,17 +64,33 @@ public class EsercizioArrayList
                     while (startSecondLoop)
                     { 
                         switch(thirdInput)
-                        {
-                            case 'q':
-                            case 'w':
-                            /// da modificare qui
-                            System.out.println(_createArray(secondInput, myNewArr, myNewArrString));
+                        { 
+                            case 'y':
+                                System.out.println(createNums + " " + createString);
+                                char fourthInput = in.next().toLowerCase().charAt(0);    
+                            switch(fourthInput)
+                            {
+                                case 'q':
+                                case 'w':
+                             
+                                /// da modificare qui
+                                System.out.print("inserisci il valore da aggiungere:: ");
+                                String addItem = in.next();
+                                System.out.println(_addItemArray(addItem,fourthInput, myNewArr, myNewArrString));
+                                break;
+                                case 'x':
+                                    startSecondLoop = false;
+                                break;
+                                default:
+                                System.out.println(err);
+                            }
                             break;
-                            case 'x':
+                            case 'n':
                                 startSecondLoop = false;
                             break;
                             default:
-                            System.out.println(err);
+                                startSecondLoop = false;
+                                System.out.println(err);
                         }
                     }
                 break;
@@ -88,8 +105,19 @@ public class EsercizioArrayList
 
     }
 
-    private static String _createArray(char secondInput, List<Integer> myNewArr, List<String> myNewArrString) 
+    private static String _addItemArray(String addItem, char fourthInput, List<Integer> myNewArr, List<String> myNewArrString) 
     {
-        return null;
+        if(fourthInput == 'q')
+        {
+            try { 
+                    myNewArr.add(Integer.parseInt(addItem));
+                    return "" + myNewArr;
+                }catch(Exception e){
+                    return "none un numero";
+                }
+
+        }
+        myNewArrString.add(addItem);
+        return ""+ myNewArrString;
     }    
 }
