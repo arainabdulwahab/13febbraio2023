@@ -1,0 +1,210 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch ArrayAndLoop",
+            "request": "launch",
+            "mainClass": "ArrayAndLoop",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Eighteen",
+            "request": "launch",
+            "mainClass": "Eighteen",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Eleven",
+            "request": "launch",
+            "mainClass": "Eleven",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Fifteen",
+            "request": "launch",
+            "mainClass": "Fifteen",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch FoLoop",
+            "request": "launch",
+            "mainClass": "FoLoop",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ForLoopThree",
+            "request": "launch",
+            "mainClass": "ForLoopThree",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch ForLoopTwo",
+            "request": "launch",
+            "mainClass": "ForLoopTwo",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Fourteen",
+            "request": "launch",
+            "mainClass": "Fourteen",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Nineteen",
+            "request": "launch",
+            "mainClass": "Nineteen",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ninth",
+            "request": "launch",
+            "mainClass": "Ninth",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ottavo",
+            "request": "launch",
+            "mainClass": "Ottavo",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Primo",
+            "request": "launch",
+            "mainClass": "Primo",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Quarto",
+            "request": "launch",
+            "mainClass": "Quarto",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Quinto",
+            "request": "launch",
+            "mainClass": "Quinto",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Secondo",
+            "request": "launch",
+            "mainClass": "Secondo",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Sesto",
+            "request": "launch",
+            "mainClass": "Sesto",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Settimo",
+            "request": "launch",
+            "mainClass": "Settimo",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Seventeen",
+            "request": "launch",
+            "mainClass": "Seventeen",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Sixteen",
+            "request": "launch",
+            "mainClass": "Sixteen",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tenth",
+            "request": "launch",
+            "mainClass": "Tenth",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Terzo",
+            "request": "launch",
+            "mainClass": "Terzo",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestBreak",
+            "request": "launch",
+            "mainClass": "TestBreak",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestRistoranteMicroApp",
+            "request": "launch",
+            "mainClass": "TestRistoranteMicroApp",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Thirteen",
+            "request": "launch",
+            "mainClass": "Thirteen",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Twelve",
+            "request": "launch",
+            "mainClass": "Twelve",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch Twenty",
+            "request": "launch",
+            "mainClass": "Twenty",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch fibonacci",
+            "request": "launch",
+            "mainClass": "fibonacci",
+            "projectName": "13febbraio2023_761b051d"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "13febbraio2023_761b051d"
+        }
+    ]
+}
