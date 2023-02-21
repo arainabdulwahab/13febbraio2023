@@ -31,22 +31,31 @@ public class login
             switch(chOne)
             {
                 case 'r':
-                    _nameAndPasswordQuestion(names, password, input, nameQuestion, passwordQuestion);
+                
+                    System.out.println(nameQuestion);
+                    names = input.next();
+                    System.out.println(passwordQuestion);
+                    password = input.next();
+                   // _nameAndPasswordQuestion(names, password, input, nameQuestion, passwordQuestion);
                     userName.add(names);
                     userPassword.add(password);
                 break;
                 case 'l':
-                    _nameAndPasswordQuestion(names, password, input, nameQuestion, passwordQuestion);
+                
+                    System.out.println(nameQuestion);
+                    names = input.next();
+                    System.out.println(passwordQuestion);
+                    password = input.next();
+                   // _nameAndPasswordQuestion(names, password, input, nameQuestion, passwordQuestion);
                     String answer = _authLogin(names, password, userName, userPassword);
                     System.out.println( _authLogin(names, password, userName, userPassword));
 
-                    System.err.println("------" + answer);
                     if(answer != null)
                     {
                         System.out.println( "ciao " + answer +"\n voi inserire un commento || x logout : ");
                         input.nextLine();
                         String addItem = input.nextLine();
-                        addElement.add(answer + "user "+ addItem);
+                        addElement.add(answer + addItem);
                         System.out.println(addElement);
                     } else {
                         System.out.println("utente non identificatol");
@@ -64,13 +73,13 @@ public class login
 
     }
 
-    private static void _nameAndPasswordQuestion(String names, String password, Scanner input, String nameQuestion, String passwordQuestion) 
-    {
-        System.out.println(nameQuestion);
-        names = input.next();
-        System.out.println(passwordQuestion);
-        password = input.next();
-    }
+    // private static void _nameAndPasswordQuestion(String names, String password, Scanner input, String nameQuestion, String passwordQuestion) 
+    // {
+    //     System.out.println(nameQuestion);
+    //     names = input.next();
+    //     System.out.println(passwordQuestion);
+    //     password = input.next();
+    // }
 
     private static String _authLogin(String names, String password, ArrayList<String> userName,
             ArrayList<String> userPassword) 
