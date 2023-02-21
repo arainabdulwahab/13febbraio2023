@@ -48,15 +48,27 @@ public class login
                     password = input.next();
                    // _nameAndPasswordQuestion(names, password, input, nameQuestion, passwordQuestion);
                     String answer = _authLogin(names, password, userName, userPassword);
-                    System.out.println( _authLogin(names, password, userName, userPassword));
 
                     if(answer != null)
                     {
-                        System.out.println( "ciao " + answer +"\n voi inserire un commento || x logout : ");
-                        input.nextLine();
-                        String addItem = input.nextLine();
-                        addElement.add(answer + addItem);
-                        System.out.println(addElement);
+                        boolean runSecondLoop = false;
+                        while(!runSecondLoop)
+                        { 
+                            System.out.println( "ciao " + answer +"\n voi inserire un commento || x logout : ");
+                            input.nextLine();
+                            String addItem = input.nextLine();
+                            if(addItem.equals("x"))
+                            {
+                                runSecondLoop = true;
+                            }
+                            if(!addItem.equals("x"))
+                            { 
+                                addElement.add(answer + addItem);
+                                System.out.println(addElement);
+                            }
+                        } 
+                            
+                        
                     } else {
                         System.out.println("utente non identificatol");
                     }
