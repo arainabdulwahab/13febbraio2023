@@ -20,6 +20,7 @@ public class login
         String registerOrLogin = "register r || login l || exit e";
         String nameQuestion = "inserisc nome: ";
         String passwordQuestion = "inserisci password: ";
+        String userChoice = " voi inserire un commento || a per visualizzare tutti i commenti || x logout : ";
         String err = "input non valido";
         boolean startProgram = false;
         String names ="";
@@ -54,16 +55,20 @@ public class login
                         boolean runSecondLoop = false;
                         while(!runSecondLoop)
                         { 
-                            System.out.println( "ciao " + answer +"\n voi inserire un commento || x logout : ");
+                            System.out.println( "utente: " + answer +"\n" + userChoice);
                             input.nextLine();
                             String addItem = input.nextLine();
                             if(addItem.equals("x"))
                             {
                                 runSecondLoop = true;
                             }
+                            if(addItem.equals("y"))
+                            {
+                                _getAllComment(answer, addElement);
+                            }
                             if(!addItem.equals("x"))
                             { 
-                                addElement.add(answer + addItem);
+                                addElement.add("utente " + answer + " : " + addItem);
                                 System.out.println(addElement);
                             }
                         } 
@@ -81,10 +86,10 @@ public class login
                     System.out.println(err);
             }
         }
-
+        input.close();
 
     }
-
+    // 
     // private static void _nameAndPasswordQuestion(String names, String password, Scanner input, String nameQuestion, String passwordQuestion) 
     // {
     //     System.out.println(nameQuestion);
@@ -93,6 +98,22 @@ public class login
     //     password = input.next();
     // }
 
+    private static String  _getAllComment(String answer, ArrayList<String> addElement) 
+    {
+        ArrayList<String> showComments = new ArrayList<String>();
+        String commentWtihUserName;
+        for(String s : addElement)
+        {
+            // verifica il nome di utente con sub string 
+            commentWtihUserName = s.substring(0, answer.length());
+           
+            if(s.equals(commentWtihUserName))
+            {
+                showComments.add(s);
+            }
+        }
+        return  "" + showComments;
+    }
     private static String _authLogin(String names, String password, ArrayList<String> userName,
             ArrayList<String> userPassword) 
     {
