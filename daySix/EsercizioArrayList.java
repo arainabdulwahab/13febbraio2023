@@ -26,6 +26,7 @@ public class EsercizioArrayList
         String viewString = "voi visualizzare la stringa --- s ";
         String createNums = "voi aggiungere un numero  --- q --";
         String createString = "voi aggiungere una stringa --- w oppure x per uscire ----";
+        String deleteItem = " -- c -- cancella un elemento inserendo un id oppure il valre da cancellare ";
         String err = "input non valido ";
         char firstInput ;
         char secondInput;
@@ -59,14 +60,14 @@ public class EsercizioArrayList
                             System.out.println(err);
                     }
                     boolean startSecondLoop = true;                    
-                    System.out.println(aggiungiElemento);
+                    System.out.println(aggiungiElemento + " " + deleteItem);
                     thirdInput = in.next().charAt(0);
                     while (startSecondLoop)
                     { 
                         switch(thirdInput)
                         { 
                             case 'y':
-                                System.out.println(createNums + " " + createString);
+                                System.out.println(createNums + " " + createString );
                                 char fourthInput = in.next().toLowerCase().charAt(0);    
                             switch(fourthInput)
                             {
@@ -85,6 +86,15 @@ public class EsercizioArrayList
                                 System.out.println(err);
                             }
                             break;
+                            case 'c':
+                                System.out.println("inserisci il valore da cancellare altrimenti ESC::  ");
+                                String delItem = in.next();
+                                System.out.println(_deleteItemFromArray(startSecondLoop, err, delItem, myNewArr, myNewArrString));
+                                if(_deleteItemFromArray(startSecondLoop, err, delItem, myNewArr, myNewArrString).equals("false"))
+                                {
+                                    startSecondLoop = false;
+                                }
+                            break;
                             case 'n':
                                 startSecondLoop = false;
                             break;
@@ -102,9 +112,36 @@ public class EsercizioArrayList
                     System.out.println(err);
             }
         }
+        in.close();
 
     }
-
+    // prende valori verifica con i cicli verifica i valori poi cancella 
+    private static String  _deleteItemFromArray(boolean startSecondLoop, String err, String delItem, ArrayList<Integer> myNewArr,
+            ArrayList<String> myNewArrString) 
+    {
+        if(delItem.equals("ESC"))
+        {
+            return "" + false;
+        }
+        try{
+            int verifyNum = Integer.parseInt(delItem); // convert to int 
+            // search element in the array list
+            for(int i : myNewArr)
+            { 
+                if(verifyNum == i)
+                { 
+                    myNewArr.remove(i);
+                    return "elemento rimosso :: " + myNewArr;
+                }
+            }
+            return err;
+        }catch(Exception e )
+        {
+            myNewArrString.removeIf(s -> (s.equals(delItem)));
+        }
+        return err;
+    }
+    // aggiungere an item
     private static String _addItemArray(String addItem, char fourthInput, List<Integer> myNewArr, List<String> myNewArrString) 
     {
         if(fourthInput == 'q')
