@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(99, 103, 106);
+}
+
+h1{
+    color: blanchedalmond;
+    font-size: larger;
+}
+p{
+    color: aliceblue;
+    font-size: medium;
+}
+a{
+    text-decoration: none;
+    color: black;
+    padding: 0px 10px;
+    border: 2px solid rgb(188, 108, 108);
+    border-radius: 20px;
+    background-color: rgb(193, 136, 136);
+}
+a:hover{
+    border: none;
+    background-color: rgb(221, 129, 129);
+    margin: 10px;
+}
+img{
+    margin: 20px;
+    animation: fadeIn 3s ;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
