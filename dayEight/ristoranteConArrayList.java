@@ -80,11 +80,11 @@ public class ristoranteConArrayList
                                 while(!buyItemLoop)
                                 {
                                     System.out.println( _visualizzaPiattiDaAcquistare(piattiNome, piattiPrezzo));
-                                    System.out.println("per uscire inserici  x");
-                                    String piattiNumero = input.next();
-                                    String newAnswer = _verifyBudget(usercredit, piattiPrezzo, piattiNumero, piattiNome, totaleIncasso);  
+                                    System.out.println("per uscire inserici  -4");
+                                    int piattiNumero = input.nextInt();
+                                    int newAnswer = _verifyBudget(usercredit, piattiPrezzo, piattiNumero, totaleIncasso);  
                                     
-                                    if(newAnswer.equals("x"))
+                                    if(newAnswer == -4)
                                     {
                                         buyItemLoop = true;
                                     }
@@ -119,39 +119,37 @@ public class ristoranteConArrayList
 
     }
     // check user input if verified buy plate
-    private static String   _verifyBudget(int usercredit, ArrayList<Integer> piattiPrezzo, String piattiNumero,ArrayList<String> piattiNome, int totaleIncasso) 
+    private static int   _verifyBudget(int usercredit, ArrayList<Integer> piattiPrezzo, int piattiNumero, int totaleIncasso) 
     {
         try{
-            int number = Integer.parseInt(piattiNumero);
+            if(piattiNumero == -4)
+            { 
+                return -4; // end buy program
+            }
             int valoreDelPiatto = 0;
-            for(int i = 0; i < piattiPrezzo.size() && i < piattiNome.size(); i ++)
+            for(int i = 0; i < piattiPrezzo.size(); i ++)
             {
-                if(i == (number -1))
+                if(i == (piattiNumero -1))
                 {
                     valoreDelPiatto = piattiPrezzo.get(i); 
                     if(usercredit > valoreDelPiatto)
                     {
-                        totaleIncasso +=  valoreDelPiatto;
-                        return "" + piattiNome.get(i) + " soldi rimasti: " + (usercredit -= valoreDelPiatto) + "\n";
+                        totaleIncasso +=  valoreDelPiatto; // total money counter
+                        return (usercredit -= valoreDelPiatto);
             
                     }
                 }
             }
             if(valoreDelPiatto > usercredit)
             { 
-                return "soldi non sufficenti";
+                return -1; // insufficente credito
             }
         }catch(Exception e)
         {
-            if(piattiNumero.equals("x"))
-            {
-                return "x";
-            }
-            else{
-                return "input non valido";
-            }
+            return -3; // input none intero
+            
         }
-        return "input non valido ";
+        return -2; // valire non valido
         
     }
     // create temporary budget range max 50
