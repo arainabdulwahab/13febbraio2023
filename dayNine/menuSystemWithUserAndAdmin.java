@@ -28,7 +28,7 @@ public class menuSystemWithUserAndAdmin
         String errInput = "input none valido";
         String userSaved = "utente salvato";
         boolean startProgram = false;
-        boolean capoVerify = false;
+        int  capoVerify = 0;
 
         // dati per il test
         userName.add("ara");
@@ -79,6 +79,7 @@ public class menuSystemWithUserAndAdmin
                     }
                 }
                 boolean checkAdmin = false;
+                String role = "";
                 while(!checkAdmin)
                 { 
                     System.out.println(adminQuestion);
@@ -90,7 +91,8 @@ public class menuSystemWithUserAndAdmin
                     }
                     if(chAskAdmin == 'n')
                     {
-                        _addUser(name, password, userName, userPassword, userRole);
+                        role = "utente";
+                        _addUser(name, password,role, userName, userPassword, userRole);
                         System.out.println(userSaved);
                         checkAdmin = true;
                     }
@@ -98,9 +100,27 @@ public class menuSystemWithUserAndAdmin
                     {
                         System.out.println(passwordQuestion);
                         String verifyAdminPssword = input.next().trim();
+                        role = "admin";
                         if(verifyAdminPssword.equals(adminPassword))
                         {
-                            // da complertare
+                            System.out.println(capoQuestion);
+                            String checkCapo = input.next();
+                            if(checkCapo.equals(capoPassword))
+                            {
+                                capoVerify ++;
+                                if(capoVerify > 1)
+                                {
+                                    System.out.println("capo gia esiste");
+                                }else
+                                {
+
+                                    _addUser(name, password,role, userName, userPassword, userRole);
+                                }
+
+                            }
+                        }else
+                        {
+                            _addUser(name, password,role, userName, userPassword, userRole);
                         }
                     }
                 }
@@ -109,8 +129,18 @@ public class menuSystemWithUserAndAdmin
         input.close();
     }
 
-    private static boolean _addUser(String name , String password, ArrayList<String> userName, ArrayList<String> userPassword, ArrayList<String> userRole)
+    private static boolean _addUser(String name , String password,String role, ArrayList<String> userName, ArrayList<String> userPassword, ArrayList<String> userRole)
     {
+        for(int i  = 0;i < userName.size() && i < userPassword.size() && i < userRole.size(); i ++)
+        {
+            if(userName.get(i).isEmpty() && userPassword.get(i).isEmpty() && userRole.get(i).isEmpty())
+            {
+                userName.add(name);
+                userPassword.add(password);
+                userRole.add(role);
+                return true;
+            }
+        }
         return false;
     }
     // controlla che la password sia valido 
